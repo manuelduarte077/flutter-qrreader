@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
 import 'package:qr_scanner/screens/widgets/custom_navigationbar.dart';
 import 'package:qr_scanner/screens/widgets/custom_scanner.dart';
 

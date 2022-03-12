@@ -9,9 +9,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'QR Reader',
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
+        primarySwatch: Colors.deepPurple,
       ),
       initialRoute: 'home',
       routes: {
