@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:qr_scanner/provider/ui_provider.dart';
 import 'package:qr_scanner/screens/pages/home_page.dart';
 import 'package:qr_scanner/screens/pages/mapa_page.dart';
 
@@ -7,16 +9,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => UiProvider(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.deepPurple,
+        ),
+        initialRoute: 'home',
+        routes: {
+          'home': (context) => const HomePage(),
+          'mapa': (context) => const MapaPage(),
+        },
       ),
-      initialRoute: 'home',
-      routes: {
-        'home': (context) => const HomePage(),
-        'mapa': (context) => const MapaPage(),
-      },
     );
   }
 }
