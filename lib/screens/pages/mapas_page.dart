@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class MapaPage extends StatelessWidget {
-  const MapaPage({Key? key}) : super(key: key);
+class MapasPage extends StatelessWidget {
+  const MapasPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('Mapa Page'),
+      child: Text('Mapas'),
     );
   }
 }
