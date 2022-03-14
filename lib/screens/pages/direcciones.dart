@@ -8,7 +8,6 @@ class DireccionesPage extends StatelessWidget {
     return const Center(
       child: Text(
         'Direcciones  Page',
-        textDirection: TextDirection.ltr,
       ),
     );
   }

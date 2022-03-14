@@ -14,7 +14,7 @@ class CustomScanner extends StatelessWidget {
 
         String barcodeScanRes = "Manuel Duarte";
 
-        print("Este es el resultado" + barcodeScanRes);
+        print("Este es el resultado: " + barcodeScanRes);
       },
     );
   }

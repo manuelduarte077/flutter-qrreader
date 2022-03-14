@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:path/path.dart';
+import 'package:qr_scanner/models/scan_model.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -33,5 +34,13 @@ class DBProvider {
           "valor TEXT"
           ")");
     });
+  }
+
+  Future<int?> nuevoScan(ScanModel nuevoScan) async {
+    final db = await database;
+    final res = await db?.insert('Scans', nuevoScan.toJson());
+    // Es el ID del ultimo registro insertado
+    print(res);
+    return res;
   }
 }

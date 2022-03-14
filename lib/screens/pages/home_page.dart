@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:qr_scanner/models/scan_model.dart';
 import 'package:qr_scanner/provider/db_provider.dart';
 import 'package:qr_scanner/provider/ui_provider.dart';
 import 'package:qr_scanner/screens/pages/direcciones.dart';
@@ -39,7 +40,10 @@ class _HomePageBody extends StatelessWidget {
     final currentIndex = uiProvider.selectedMenuOpt;
 
     // TODO: Temporal leer la base de datos
-    DBProvider.db.database;
+    final nuevoScan = ScanModel(valor: 'http://www.getnerdify.com');
+
+    DBProvider.db.nuevoScan(nuevoScan);
+    print("nuevoScan: ${nuevoScan.valor}");
 
     switch (currentIndex) {
       case 0:
