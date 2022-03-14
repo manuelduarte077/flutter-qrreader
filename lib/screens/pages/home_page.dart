@@ -20,7 +20,9 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.delete_forever),
-            onPressed: () {},
+            onPressed: () {
+              DBProvider.db.deleteAll();
+            },
           ),
         ],
       ),
@@ -43,8 +45,6 @@ class _HomePageBody extends StatelessWidget {
     // Usar el ScanListProvider para obtener los scans
     final scanListProvider =
         Provider.of<ScanListProvider>(context, listen: false);
-
-    //  /Users/manuel/Library/Caches/Google/AndroidStudio2021.1/device-explorer/samsung-sm_a025m-R9JNC09B6MJ/data/data/com.example.qr_scanner/app_flutter/ScannDB.db
 
     switch (currentIndex) {
       case 0:

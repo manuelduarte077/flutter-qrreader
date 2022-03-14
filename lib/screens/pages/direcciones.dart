@@ -12,16 +12,28 @@ class DireccionesPage extends StatelessWidget {
     return ListView.builder(
       itemCount: scans.length,
       itemBuilder: (context, index) {
-        return ListTile(
-          title: Text(scans[index].valor),
-          leading: Icon(Icons.map, color: Theme.of(context).primaryColor),
-          trailing: const Icon(
-            Icons.keyboard_arrow_right,
-            color: Colors.grey,
+        return Dismissible(
+          key: UniqueKey(),
+          background: Container(
+            color: Colors.red,
           ),
-          onTap: () {
-            print(scans[index].id);
+          onDismissed: (DismissDirection direction) {
+            Provider.of<ScanListProvider>(context, listen: false)
+                .borrarScanById(scans[index].id!);
           },
+          child: ListTile(
+            title: Text(scans[index].valor),
+            subtitle: Text('ID: ${scans[index].id}'),
+            leading: Icon(Icons.home_outlined,
+                color: Theme.of(context).primaryColor),
+            trailing: const Icon(
+              Icons.keyboard_arrow_right,
+              color: Colors.grey,
+            ),
+            onTap: () {
+              print(scans[index].id);
+            },
+          ),
         );
       },
     );

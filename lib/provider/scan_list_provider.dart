@@ -36,15 +36,17 @@ class ScanListProvider extends ChangeNotifier {
   }
 
   // Borrar todos los Scans
-  borrarScan() async {
-    await DBProvider.db.deleteAll;
+  borrarTodos() async {
+    DBProvider.db.deleteAll;
     scans = [];
     notifyListeners();
+    print('Borrar todos');
   }
 
   // Borrar un Scan
   borrarScanById(int id) async {
     await DBProvider.db.deleteScan(id);
-   cargarScansPorTipo(tipoSeleccionado);
+    scans = scans.where((s) => s.id != id).toList();
+    notifyListeners();
   }
 }

@@ -41,7 +41,6 @@ class DBProvider {
     final db = await database;
     final res = await db?.insert('Scans', nuevoScan.toJson());
     // Es el ID del ultimo registro insertado
-    print(res);
     return res;
   }
 
@@ -50,7 +49,6 @@ class DBProvider {
     final db = await database;
     final res = await db?.query('Scans', where: 'id = ?', whereArgs: [id]);
     // Lista de registros
-    print(res);
     return res!.isNotEmpty ? ScanModel.fromJson(res.first) : null;
   }
 
@@ -59,7 +57,6 @@ class DBProvider {
     final db = await database;
     final res = await db?.query('Scans');
     // Lista de registros
-    print(res);
     return res!.isNotEmpty
         ? res.map((e) => ScanModel.fromJson(e)).toList()
         : [];
@@ -70,7 +67,6 @@ class DBProvider {
     final db = await database;
     final res = await db?.query('Scans', where: 'tipo = ?', whereArgs: [tipo]);
     // Lista de registros
-    print(res);
     return res!.isNotEmpty
         ? res.map((e) => ScanModel.fromJson(e)).toList()
         : [];
@@ -81,7 +77,6 @@ class DBProvider {
     final db = await database;
     final res = await db?.update('Scans', nuevoScan.toJson(),
         where: 'id = ?', whereArgs: [nuevoScan.id]);
-    print(res);
     return res;
   }
 
@@ -89,15 +84,15 @@ class DBProvider {
   Future<int?> deleteScan(int id) async {
     final db = await database;
     final res = await db?.delete('Scans', where: 'id = ?', whereArgs: [id]);
-    print(res);
     return res;
   }
 
   // Borrar todos los registros
   Future<int?> deleteAll() async {
     final db = await database;
-    final res = await db?.rawDelete('DELETE FROM Scans');
-    print(res);
+    final res = await db?.rawDelete('''
+      DELETE FROM Scans
+    ''');
     return res;
   }
 }
