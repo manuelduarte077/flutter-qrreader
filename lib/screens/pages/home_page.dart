@@ -39,11 +39,9 @@ class _HomePageBody extends StatelessWidget {
 
     final currentIndex = uiProvider.selectedMenuOpt;
 
-    // TODO: Temporal leer la base de datos
-    final nuevoScan = ScanModel(valor: 'http://www.getnerdify.com');
-
-    DBProvider.db.nuevoScan(nuevoScan);
-    print("nuevoScan: ${nuevoScan.valor}");
+    DBProvider.db.getScansByType('geo').then((scans) {
+      print("Tipo: " + scans.toString());
+    });
 
     switch (currentIndex) {
       case 0:
