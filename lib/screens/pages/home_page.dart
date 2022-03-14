@@ -39,9 +39,11 @@ class _HomePageBody extends StatelessWidget {
 
     final currentIndex = uiProvider.selectedMenuOpt;
 
-    DBProvider.db.getScansByType('geo').then((scans) {
-      print("Tipo: " + scans.toString());
+    DBProvider.db.getAllScans().then((scans) {
+      print(scans);
     });
+
+    //  /Users/manuel/Library/Caches/Google/AndroidStudio2021.1/device-explorer/samsung-sm_a025m-R9JNC09B6MJ/data/data/com.example.qr_scanner/app_flutter/ScannDB.db
 
     switch (currentIndex) {
       case 0:
