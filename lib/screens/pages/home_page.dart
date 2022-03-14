@@ -7,6 +7,8 @@ import 'package:qr_scanner/screens/pages/mapas_page.dart';
 import 'package:qr_scanner/screens/widgets/custom_navigationbar.dart';
 import 'package:qr_scanner/screens/widgets/custom_scanner.dart';
 
+import '../../provider/scan_list_provider.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -38,16 +40,18 @@ class _HomePageBody extends StatelessWidget {
 
     final currentIndex = uiProvider.selectedMenuOpt;
 
-    DBProvider.db.getAllScans().then((scans) {
-      print(scans);
-    });
+    // Usar el ScanListProvider para obtener los scans
+    final scanListProvider =
+        Provider.of<ScanListProvider>(context, listen: false);
 
     //  /Users/manuel/Library/Caches/Google/AndroidStudio2021.1/device-explorer/samsung-sm_a025m-R9JNC09B6MJ/data/data/com.example.qr_scanner/app_flutter/ScannDB.db
 
     switch (currentIndex) {
       case 0:
+        scanListProvider.cargarScansPorTipo('geo');
         return const MapasPage();
       case 1:
+        scanListProvider.cargarScansPorTipo('http');
         return const DireccionesPage();
       default:
         return const MapasPage();
