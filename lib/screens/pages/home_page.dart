@@ -3,7 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:qr_scanner/provider/db_provider.dart';
 import 'package:qr_scanner/provider/ui_provider.dart';
 import 'package:qr_scanner/screens/pages/direcciones.dart';
-import 'package:qr_scanner/screens/pages/mapas_page.dart';
+import 'package:qr_scanner/screens/pages/mapa/mapas_page.dart';
+import 'package:qr_scanner/screens/pages/image/scan.dart';
 import 'package:qr_scanner/screens/widgets/custom_navigationbar.dart';
 import 'package:qr_scanner/screens/widgets/custom_scanner.dart';
 
@@ -29,7 +30,6 @@ class HomePage extends StatelessWidget {
       body: _HomePageBody(),
       bottomNavigationBar: const CustomNavigationBar(),
       floatingActionButton: const CustomScanner(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
@@ -53,6 +53,9 @@ class _HomePageBody extends StatelessWidget {
       case 1:
         scanListProvider.cargarScansPorTipo('http');
         return const DireccionesPage();
+      case 2:
+        scanListProvider.cargarScansPorTipo('image');
+        return const ImageScan();
       default:
         return const MapasPage();
     }

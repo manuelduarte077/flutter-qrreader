@@ -13,8 +13,10 @@ class ScanModel {
   }) {
     if (valor.contains('http')) {
       tipo = 'http';
-    } else {
+    } else if (valor.contains('geo')) {
       tipo = 'geo';
+    } else {
+      tipo = 'image';
     }
   }
 
