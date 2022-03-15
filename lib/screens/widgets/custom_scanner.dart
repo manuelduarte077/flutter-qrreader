@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_scanner/provider/scan_list_provider.dart';
+import 'package:qr_scanner/utils/utils.dart';
 
 class CustomScanner extends StatelessWidget {
   const CustomScanner({Key? key}) : super(key: key);
@@ -22,11 +22,16 @@ class CustomScanner extends StatelessWidget {
         final scanListProvider =
             Provider.of<ScanListProvider>(context, listen: false);
 
-        scanListProvider.nuevoScan("http://www.getnerdify.com");
+        const barraCodes = 'geo:45.23,-75.92';
 
-        scanListProvider.nuevoScan("geo:40.730610,-73.935242");
+        if (barraCodes == '-1') {
+          return;
+        }
+        final nuevoScan = await scanListProvider.nuevoScan(barraCodes);
 
-        print("No sirve: " + scanListProvider.toString());
+        launchURL(context, nuevoScan);
+
+        print("No sirve: " + nuevoScan.toString());
       },
     );
   }

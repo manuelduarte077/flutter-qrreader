@@ -13,6 +13,7 @@ launchURL(BuildContext context, ScanModel scan) async {
       throw 'Could not launch $url';
     }
   } else {
-    print('No es una URL');
+    // Abir el mapa
+    Navigator.pushNamed(context, 'mapa', arguments: scan);
   }
 }

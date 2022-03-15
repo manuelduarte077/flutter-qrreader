@@ -32,12 +32,13 @@ class ScanType extends StatelessWidget {
             subtitle: Text('ID: ${scans[index].id}'),
             leading: Icon(
               tipo == 'http' ? Icons.map : Icons.home_outlined,
-              color: tipo == 'http' ? Colors.blue : Colors.indigo,
+              color: tipo == 'http' ? Colors.deepPurple : Colors.deepPurple,
             ),
             trailing: Icon(Icons.keyboard_arrow_right,
                 color: Theme.of(context).primaryColor),
             onTap: () {
               launchURL(context, scans[index]);
+              print(scans[index].valor);
             },
           ),
         );
