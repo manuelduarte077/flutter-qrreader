@@ -24,6 +24,10 @@ class CustomNavigationBar extends StatelessWidget {
           icon: Icon(Icons.compass_calibration),
           label: 'Directions',
         ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.camera_alt),
+          label: 'Image',
+        ),
       ],
     );
   }
