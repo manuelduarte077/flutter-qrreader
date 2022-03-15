@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:qr_scanner/provider/scan_list_provider.dart';
+
 import 'package:qr_scanner/screens/widgets/scan_type.dart';
 
 class DireccionesPage extends StatelessWidget {
