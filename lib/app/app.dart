@@ -4,6 +4,7 @@ import 'package:qr_scanner/provider/scan_list_provider.dart';
 import 'package:qr_scanner/provider/ui_provider.dart';
 import 'package:qr_scanner/screens/pages/home_page.dart';
 import 'package:qr_scanner/screens/pages/mapa_page.dart';
+import 'package:qr_scanner/screens/pages/mapas_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         routes: {
           'home': (context) => const HomePage(),
           'mapa': (context) => const MapaPage(),
+          'mapas': (context) => const MapasPage(),
         },
       ),
     );

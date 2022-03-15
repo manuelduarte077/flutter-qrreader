@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_scanner/provider/db_provider.dart';
 import 'package:qr_scanner/provider/scan_list_provider.dart';
+import 'package:qr_scanner/utils/utils.dart';
 
 class ScanType extends StatelessWidget {
   final String tipo;
@@ -36,7 +37,7 @@ class ScanType extends StatelessWidget {
             trailing: Icon(Icons.keyboard_arrow_right,
                 color: Theme.of(context).primaryColor),
             onTap: () {
-              print(scans[index].id);
+              launchURL(context, scans[index]);
             },
           ),
         );
