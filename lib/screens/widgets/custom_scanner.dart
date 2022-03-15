@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+
+
 import 'package:provider/provider.dart';
 import 'package:qr_scanner/provider/scan_list_provider.dart';
 import 'package:qr_scanner/utils/utils.dart';
@@ -16,14 +18,12 @@ class CustomScanner extends StatelessWidget {
         String barrcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
           '#ff6666',
           'Cancel',
-          false,
+          true,
           ScanMode.DEFAULT,
         );
 
         final scanListProvider =
             Provider.of<ScanListProvider>(context, listen: false);
-
-        // const barraCodes = 'geo:12.0993196451293, -86.22928553286096';
 
         if (barrcodeScanRes == '-1') {
           return;

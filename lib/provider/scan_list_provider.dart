@@ -42,7 +42,6 @@ class ScanListProvider extends ChangeNotifier {
     DBProvider.db.deleteAll;
     scans = [];
     notifyListeners();
-    print('Borrar todos');
   }
 
   // Borrar un Scan

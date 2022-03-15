@@ -3,8 +3,10 @@ import 'package:provider/provider.dart';
 import 'package:qr_scanner/provider/scan_list_provider.dart';
 import 'package:qr_scanner/provider/ui_provider.dart';
 import 'package:qr_scanner/screens/pages/home_page.dart';
-import 'package:qr_scanner/screens/pages/mapa_page.dart';
-import 'package:qr_scanner/screens/pages/mapas_page.dart';
+import 'package:qr_scanner/screens/pages/image/scan_image.dart';
+import 'package:qr_scanner/screens/pages/mapa/mapa_page.dart';
+import 'package:qr_scanner/screens/pages/mapa/mapas_page.dart';
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -26,6 +28,7 @@ class MyApp extends StatelessWidget {
           'home': (context) => const HomePage(),
           'mapa': (context) => const MapaPage(),
           'mapas': (context) => const MapasPage(),
+          'scan_image': (context) => const ScanImage(),
         },
       ),
     );

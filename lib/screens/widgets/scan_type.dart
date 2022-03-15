@@ -6,9 +6,9 @@ import 'package:qr_scanner/utils/utils.dart';
 
 class ScanType extends StatelessWidget {
   final String tipo;
-  const ScanType({
+ const ScanType({
     Key? key,
-    required this.tipo,
+     required this.tipo,
   }) : super(key: key);
 
   @override
