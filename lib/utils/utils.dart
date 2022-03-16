@@ -11,10 +11,16 @@ launchURL(BuildContext context, ScanModel scan) async {
   if (scan.tipo == 'http') {
     if (await canLaunch(url)) {
       await launch(url);
-    } else if (scan.tipo == 'geo') {
-      Navigator.pushNamed(context, 'mapa', arguments: scan);
+    } else {
+      throw 'Could not launch $url';
     }
+  } else  if (scan.tipo == 'geo') {
+    Navigator.pushNamed(context, 'mapa', arguments: scan);
   } else {
     Navigator.pushNamed(context, 'scan_image', arguments: scan);
   }
+
+  // TODO: Hacer switch para abrir en otra pantalla
+
+
 }

@@ -7,6 +7,6 @@ class DireccionesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const ScanType(tipo: "geo");
+    return  const ScanType(tipo: "http");
   }
 }

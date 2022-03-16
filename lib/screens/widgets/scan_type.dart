@@ -13,6 +13,7 @@ class ScanType extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final scanListProvider = Provider.of<ScanListProvider>(context);
     final scans = scanListProvider.scans;
 
@@ -31,14 +32,13 @@ class ScanType extends StatelessWidget {
             title: Text(scans[index].valor),
             subtitle: Text('ID: ${scans[index].id}'),
             leading: Icon(
-              tipo == 'http' ? Icons.map : Icons.home_outlined,
+              tipo == 'http' ? Icons.home_outlined : Icons.map,
               color: tipo == 'http' ? Colors.deepPurple : Colors.deepPurple,
             ),
             trailing: Icon(Icons.keyboard_arrow_right,
                 color: Theme.of(context).primaryColor),
             onTap: () {
               launchURL(context, scans[index]);
-              print(scans[index].valor);
             },
           ),
         );
