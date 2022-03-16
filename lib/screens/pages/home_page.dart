@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qr_scanner/provider/db_provider.dart';
-import 'package:qr_scanner/provider/ui_provider.dart';
-import 'package:qr_scanner/screens/pages/direcciones.dart';
-import 'package:qr_scanner/screens/pages/mapa/mapas_page.dart';
-import 'package:qr_scanner/screens/pages/image/scan.dart';
-import 'package:qr_scanner/screens/widgets/custom_navigationbar.dart';
-import 'package:qr_scanner/screens/widgets/custom_scanner.dart';
-
-import '../../provider/scan_list_provider.dart';
+import 'package:qr_scanner/provider/provider.dart';
+import 'package:qr_scanner/screens/pages/pages.dart';
+import 'package:qr_scanner/screens/widgets/widgets.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);

@@ -11,11 +11,6 @@ class ThemePreferences {
     _prefs = await SharedPreferences.getInstance();
   }
 
-  /**
-   * Devuelve el valor de la propiedad isDarkMode
-   * @return bool
-   */
-
   // Dark Mode
   static bool get isDarkMode {
     return _prefs.getBool('isDarkMode') ?? _isDarkMode;

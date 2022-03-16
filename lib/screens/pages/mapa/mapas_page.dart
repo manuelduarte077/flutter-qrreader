@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qr_scanner/screens/widgets/scan_type.dart';
+import 'package:qr_scanner/screens/widgets/widgets.dart';
 
 class MapasPage extends StatelessWidget {
   const MapasPage({Key? key}) : super(key: key);

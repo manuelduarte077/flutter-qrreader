@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:qr_scanner/screens/widgets/scan_type.dart';
+import 'package:qr_scanner/screens/widgets/widgets.dart';
 
 class ImageScan extends StatelessWidget {
   const ImageScan({Key? key}) : super(key: key);
