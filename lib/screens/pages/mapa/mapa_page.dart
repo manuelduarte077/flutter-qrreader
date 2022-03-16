@@ -23,6 +23,7 @@ class _MapaPageState extends State<MapaPage> {
 
     // Marcadores
     Set<Marker> markers = <Marker>{};
+
     markers.add(
       Marker(
           markerId: const MarkerId('geo-location'), position: scan.getLatLng()),

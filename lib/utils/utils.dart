@@ -7,7 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 launchURL(BuildContext context, ScanModel scan) async {
   final url = scan.valor;
 
-  // Abir el sitio web
+   // Abir el sitio web
   if (scan.tipo == 'http') {
     if (await canLaunch(url)) {
       await launch(url);
