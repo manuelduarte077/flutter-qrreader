@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: const Text('Historial'),
         actions: [
           IconButton(
@@ -21,6 +22,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+      drawer: const SideMenu(),
       body: _HomePageBody(),
       bottomNavigationBar: const CustomNavigationBar(),
       floatingActionButton: const CustomScanner(),

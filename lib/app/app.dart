@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qr_scanner/provider/scan_list_provider.dart';
-import 'package:qr_scanner/provider/ui_provider.dart';
-import 'package:qr_scanner/screens/pages/home_page.dart';
-import 'package:qr_scanner/screens/pages/image/scan_image.dart';
-import 'package:qr_scanner/screens/pages/mapa/mapa_page.dart';
-import 'package:qr_scanner/screens/pages/mapa/mapas_page.dart';
-
+import 'package:qr_scanner/provider/provider.dart';
+import 'package:qr_scanner/screens/pages/pages.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -20,15 +15,15 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
-        ),
+        theme: Provider.of<ThemeProvider>(context).currentTheme,
         initialRoute: 'home',
         routes: {
           'home': (context) => const HomePage(),
           'mapa': (context) => const MapaPage(),
           'mapas': (context) => const MapasPage(),
           'scan_image': (context) => const ScanImage(),
+          'image_scan': (context) => const ImageScan(),
+          'settings': (context) => const SettingScreen(),
         },
       ),
     );
