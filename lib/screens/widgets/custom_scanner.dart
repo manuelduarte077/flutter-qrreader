@@ -19,7 +19,7 @@ class CustomScanner extends StatelessWidget {
           '#ff6666',
           'Cancel',
           true,
-          ScanMode.DEFAULT,
+          ScanMode.QR,
         );
 
         final scanListProvider =
@@ -31,6 +31,7 @@ class CustomScanner extends StatelessWidget {
         final nuevoScan = await scanListProvider.nuevoScan(barrcodeScanRes);
 
         launchURL(context, nuevoScan);
+
       },
     );
   }

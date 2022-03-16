@@ -23,8 +23,11 @@ class _MapaPageState extends State<MapaPage> {
 
     // Marcadores
     Set<Marker> markers = <Marker>{};
-    markers.add(Marker(
-        markerId: const MarkerId('geo-location'), position: scan.getLatLng()));
+
+    markers.add(
+      Marker(
+          markerId: const MarkerId('geo-location'), position: scan.getLatLng()),
+    );
 
     return Scaffold(
       appBar: AppBar(
