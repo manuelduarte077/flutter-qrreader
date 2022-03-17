@@ -25,6 +25,10 @@
 
         <meta-data android:name="com.google.android.geo.API_KEY"
                android:value="AIzaSyAQtc-S0rPLT4PP_gyibGeRel0tzDuhCBc"/>
+
+       <meta-data android:name="io.flutter.embedding.android.SplashScreenDrawable"
+            android:resource="@drawable/launch_background"/>
+            
         <activity
             android:name=".MainActivity"
             android:exported="true"
