@@ -42,7 +42,7 @@ class _DrawerHeaderWidget extends StatelessWidget {
         radius: 50,
         backgroundColor: Color(0xffFDCF09),
         child: CircleAvatar(
-          radius: 55,
+          radius: 60,
           backgroundImage: NetworkImage(
             'https://avatars.githubusercontent.com/u/46093689?v=4',
           ),
