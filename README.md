@@ -1,16 +1,15 @@
 # qr_scanner
 
-A new Flutter project.
+# Android
 
-## Getting Started
+| ![Video](assets/screens/1.png) | ![ScreenShots](assets/screens/2.png) | ![ScreenShots](assets/screens/3.png) |
+| ------------------------------ | ------------------------------------ | ------------------------------------ |
+| Screenshot                     | Screenshot                           | Screenshot                           |
 
-This project is a starting point for a Flutter application.
+| ![Video](assets/screens/5.png) | ![ScreenShots](assets/screens/6.png) | ![ScreenShots](assets/screens/7.png) |
+| ------------------------------ | ------------------------------------ | ------------------------------------ |
+| Screenshot                     | Screenshot                           | Screenshot                           |
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| ![Video](assets/screens/9.png) | ![ScreenShots](assets/screens/10.png) | ![ScreenShots](assets/screens/12.png) |
+| ------------------------------ | ------------------------------------- | ------------------------------------- |
+| Screenshot                     | Screenshot                            | Screenshot                            |
