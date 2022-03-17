@@ -1,47 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
-import 'package:provider/provider.dart';
-import 'package:qr_scanner/provider/scan_list_provider.dart';
-import 'package:qr_scanner/utils/utils.dart';
+import 'package:qr_scanner/screens/pages/scan/qr_code_scanner_screen.dart';
 
 class CustomScanner extends StatelessWidget {
   const CustomScanner({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Test();
-  }
-}
-
-class Test extends StatelessWidget {
-  const Test({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
     return FloatingActionButton(
       elevation: 0,
-      child: const Icon(Icons.qr_code_scanner),
-      onPressed: () async {
-        String barrcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
-          '#ff6666',
-          'Cancel',
-          true,
-          ScanMode.DEFAULT,
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const QRCodeScannerScreen(),
+          ),
         );
+        // final scanListProvider =
+        //     Provider.of<ScanListProvider>(context, listen: false);
 
-        final scanListProvider =
-            Provider.of<ScanListProvider>(context, listen: false);
+        // if (QRCodeScannerScreen == '-1') {
+        //   return;
+        // }
+        // final nuevoScan = await scanListProvider
+        //     .nuevoScan(QRCodeScannerScreen().toString());
 
-        if (barrcodeScanRes == '-1') {
-          return;
-        }
-        final nuevoScan = await scanListProvider.nuevoScan(barrcodeScanRes);
-
-        launchURL(context, nuevoScan);
+        // launchURL(context, nuevoScan);
       },
+      child: const Icon(Icons.qr_code_scanner_rounded),
+      tooltip: 'Scan QR Code',
     );
   }
 }
